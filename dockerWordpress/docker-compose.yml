@@ -2,6 +2,10 @@
 # Instructions from:
 # https://docs.docker.com/compose/wordpress/
 
+# wordpress-backup part from:
+# https://hub.docker.com/r/aveltens/wordpress-backup/
+# https://github.com/angelo-v/wordpress-backup-quickstart/blob/master/docker-compose.yml
+
 version: '3.3'
 
 services:
@@ -28,5 +32,19 @@ services:
        WORDPRESS_DB_USER: wordpress
        WORDPRESS_DB_PASSWORD: wordpress
        WORDPRESS_DB_NAME: wordpress
+#  backup:
+#    image: aveltens/wordpress-backup
+#    restart: always
+#    volumes:
+#     - ./backups:/backups
+#     - wordpress_files:/var/www/html
+#    depends_on:
+#     - mysql
+#    environment:
+#     - "MYSQL_ENV_MYSQL_DATABASE=$MYSQL_DATABASE"
+#     - "MYSQL_ENV_MYSQL_USER=$MYSQL_USER"
+#     - "MYSQL_ENV_MYSQL_PASSWORD=$MYSQL_PASSWORD"
+#     - "MYSQL_PORT_3306_TCP_PORT=3306"
 volumes:
     db_data: {}
+#    wordpress_files:
