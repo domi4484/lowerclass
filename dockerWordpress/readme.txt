@@ -4,6 +4,9 @@ sudo docker info
 Listare i containers:
 docker container ls
 
+Restartare un container:
+docker container restart [OPTIONS] CONTAINER [CONTAINER...]
+
 Far partire docker:
 sudo service docker start
 
